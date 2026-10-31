@@ -1,0 +1,17 @@
+{
+  "name": "ATLAS — Ağıllı şəhər nəqliyyatı",
+  "short_name": "ATLAS",
+  "lang": "az",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0F172A",
+  "icons": [
+    {
+      "src": "/atlas-app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
