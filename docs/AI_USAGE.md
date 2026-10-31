@@ -1,34 +1,23 @@
 # ATLAS — süni intellektdən istifadə bəyannaməsi
 
-**Layihə:** ATLAS (BakuTransit AI)
-**Vasitə:** OpenAI ChatGPT mühitində Codex
+**Layihə:** ATLAS
+**Vasitə:** OpenAI ChatGPT
 **Tarix:** 31 oktyabr 2026
 
 ## İstifadə məqsədi və iş bölgüsü
 
 Layihə sahibi sərnişin və operator ekranları üçün funksional tələbləri, dizayn istinadlarını, ATLAS loqo və ikon fayllarını, açıq məlumat mənbəyi təklifini, nümayiş üçün marşrut cədvəlini və düzəliş göstərişlərini təqdim edib. ChatGPT/Codex mövcud repozitoriyanı araşdırmaq, kod və interfeys dəyişiklikləri hazırlamaq, xətaları araşdırmaq, testləri icra etmək və texniki sənədləri yazmaq üçün istifadə olunub. Tətbiqin GPS, ETA, sıxlıq və xəbərdarlıq hesablamaları öyrədilmiş AI modeli deyil, proqram kodunda müəyyən edilmiş qaydalardır.
 
-## Yazışmadan tapşırıq nümunələri
+## Test məqsədli prompt nümunələri
 
-Aşağıdakılar layihə sahibinin bu söhbətdə verdiyi göstərişlərdən **sözbəsöz qısa parçalar**dır. Yazılış saxlanılıb; uzun mesajlar ixtisar edilib. Bu siyahı bütün yazışmanın tam arxivi deyil.
+Aşağıdakı altı sorğu layihənin yoxlanması üçün **nümunə formulalardır**. Onlar sözbəsöz yazışma arxivi kimi təqdim edilmir.
 
-| № | Verilmiş göstərişdən parça | İş sahəsi |
-|---|---|---|
-| 1 | “Enhance the existing BakuTransit AI application without rebuilding or breaking any working functionality.” | Mövcud funksiyaların yoxlanması və prioritetli təkmilləşdirmə |
-| 2 | “Smart Alternative Bus Suggestions” və “Crowdsourcing Confidence Indicator” | Eyni marşrut üzrə etibarlı alternativ təklifi və bildiriş etibarı |
-| 3 | “Operator Action History” və “GPS Freshness Detection” | Planlaşdırılmış operator cavabı və köhnəlmiş GPS-in göstərilməsi |
-| 4 | “bu gorduyun dizayni a-ze 1-e-1 eynisini edessen premium olmagi sertdir” | Sərnişin və operator UI dizaynı |
-| 5 | “bu popup i swipe up down ile acib baglamaq veya kiciltmen olsun” | Sərnişin ekranında alt panelin jestlə idarəsi |
-| 6 | “real datadan real heyat uygun dayancaqlari elave etmeyide unutma” | Rəsmi dayanacaq koordinatlarının araşdırılması və ayrıca məlumat qatı |
-| 7 | “avtobuslarin rotate deyismesin donen anda” | Avtobus işarəsi və dönmə nişanının davranışı |
-| 8 | “ciahzin anonim kodunu kopyalamaq olsun butona basandaq” | Anonim cihaz kodunu kopyalama düyməsi |
-| 9 | “birde avtomatik bir login qurmalisaan ... demo olsun yeni api ile filan yox” | Xarici identifikasiya API-si olmadan demo giriş ekranı |
-| 10 | “brauzerde ag ekran gosterir onu duzelt” | Ağ ekran xətasının araşdırılması |
-| 11 | “bildirislerde bunu swipe up le islemir onu duzelt smooth olsun” | Bildiriş panelinin jesti və keçid animasiyası |
-| 12 | “son defe yoxlanis et” | Son funksional yoxlama və build |
-| 13 | “menim ucun ubunu githubda yeni repo kimi elave et” | Mənbə kodunun GitHub-a yerləşdirilməsi |
-
-Bundan əlavə, layihə sahibi mygov ID giriş ekranı şəkillərini, ATLAS vizual fayllarını, BakuBus marşrut cədvəli şəklini və `admin.opendata.az` dataset sorğusunu göndərib. Bunlar AI tərəfindən uydurulmuş prompt və ya məlumat mənbələri kimi təqdim edilmir.
+1. **Əsas iş axınları:** “Sərnişin xəritəsi, marşrut və dayanacaq seçimi, avtobusun hərəkəti, ETA, sıxlıq bildirimi və operator panelini yoxla. Mövcud funksiyalarda pozuntu varsa səbəbi tap, düzəlt və backend testlərini yenidən işə sal.”
+2. **GPS və ETA:** “Avtobusun GPS qeydi 30 saniyədən köhnə olduqda və ya yol geometriyası çatışmadıqda ETA-nın etibarlı canlı məlumat kimi göstərilmədiyini sına. Xəbərdarlıq mətninin Azərbaycan dilində və aydın olduğuna bax.”
+3. **Sərnişin bildirişlərinin etibarı:** “Tək istifadəçidən təkrar bildirişləri müstəqil sərnişin sayı kimi hesablama. Son hesabat vaxtını, müstəqil hesabat sayını və kifayət qədər sübut olmayan vəziyyəti test et.”
+4. **Anomaliya və operator hərəkətləri:** “Yüksək sıxlıq yalnız tələb olunan müddət davam etdikdə xəbərdarlıq yaratdığını, eyni hadisə üçün təkrar xəbərdarlıq yaranmadığını və operatorun planlaşdırdığı cavabın vaxtı ilə tarixçəyə yazıldığını yoxla.”
+5. **Alternativ avtobus təklifi:** “Eyni marşrut üzrə daha az sıx olan sonrakı avtobusu yalnız hər iki avtobus üçün təzə GPS, etibarlı sıxlıq və ETA məlumatı varsa təklif et. Məlumat çatışmırsa təklif göstərmə.”
+6. **Mobil interfeys və son yoxlama:** “Alt panel və bildirişlər üçün yuxarı-aşağı sürüşdürmə, qatların sırası, loqo hizası, demo giriş və yüklənmə vəziyyətlərini mobil ölçüdə yoxla. Ağ ekran xətası olmadığını təsdiqlə və frontend production build-i işə sal.”
 
 ## AI dəstəyinin əhatəsi
 
@@ -41,4 +30,4 @@ Bundan əlavə, layihə sahibi mygov ID giriş ekranı şəkillərini, ATLAS viz
 
 Son yoxlamada backend üzrə **23 avtomatlaşdırılmış test keçib**, frontend production build uğurla tamamlanıb. Docker Compose bu iş mühitində ayrıca işə salınmayıb. D1/D2/D3 nümunə marşrutlardır; tətbiq real avtobus GPS axınına və dövlət identifikasiya xidmətinə qoşulmur. Rəsmi dayanacaq koordinatları demo marşrutlarının təsdiqlənmiş dayanacaq ardıcıllığı kimi göstərilmir. Operatorun əlavə avtobus barədə qeydi faktiki avtobus göndərilməsi anlamına gəlmir.
 
-**Bəyanat:** Bu sənəd ChatGPT/Codex istifadəsinin görünən iş sahələrini və layihə sahibinin həqiqətən verdiyi tapşırıq nümunələrini açıqlayır. Komanda təqdimatdan əvvəl tətbiqi və sənədi son dəfə nəzərdən keçirməlidir.
+**Bəyanat:** Bu sənəd ChatGPT/Codex istifadəsinin görünən iş sahələrini və layihənin yoxlanması üçün hazırlanmış nümunə test sorğularını açıqlayır. Komanda təqdimatdan əvvəl tətbiqi və sənədi son dəfə nəzərdən keçirməlidir.
