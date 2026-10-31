@@ -1,4 +1,4 @@
-# BakuTransit AI guide
+# ATLAS guide
 - Keep shared transit state in FastAPI/SQLite; React renders API data.
 - Store naive UTC timestamps in SQLite; serialize with Z and render in Asia/Baku.
 - Keep GPS, ETA, analytics and alerts deterministic. Demo replay uses production rules.
