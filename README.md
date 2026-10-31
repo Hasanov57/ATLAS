@@ -41,6 +41,24 @@ docker compose up --build
 
 The same URLs apply. SQLite persists in the `transit_data` volume. The backend image includes the cached demo road geometry. Docker was not available in the development environment, so the Compose startup has not been runtime verified here. A fresh SQLite volume does not include the official stops. To load them into Docker after startup, run `docker compose exec backend python scripts/import_official_stops.py --download`.
 
+## Sistem arxitekturası
+
+Sərnişin ekranı və operator paneli eyni React/TypeScript tətbiqinin iki səhifəsidir. Hər ikisi Vite üzərindən `/api` sorğularını FastAPI serverinə ötürür. FastAPI marşrutları, avtobus mövqelərini, sıxlıq bildirişlərini, xəbərdarlıqları və operator planlarını SQLAlchemy vasitəsilə SQLite-da saxlayır. GPS simulyatoru təxminən hər 5 saniyədə keşlənmiş yol xətti boyunca avtobusları irəli aparır; frontend server məlumatını göstərir və iki yenilənmə arasında işarələri yol üzərində animasiya edir.
+
+```text
+Sərnişin və operator UI (React) → /api (Vite proxy) → FastAPI → SQLite
+                                                   ↘ keşlənmiş OSM yol geometriyası
+```
+
+Sıxlıq hesablanması, ETA və davamlı yüksək sıxlıq xəbərdarlığı backend-də deterministik qaydalarla aparılır. Tarixi demo eyni qaydaları təkrar oynadır. Server zamanları UTC saxlanır, API `Z` ilə verir, ekran isə `Asia/Baku` vaxtında göstərir. Ətraflı qaydalar [arxitektura qeydi](docs/ARCHITECTURE.md) və [texniki izah](docs/TECHNICAL_EXPLANATION.md) fayllarındadır.
+
+## Təhvil materialları
+
+- İşlək proqram və mənbə kodu: [GitHub ATLAS](https://github.com/Hasanov57/ATLAS)
+- İşə salınma addımları: bu README-də **Local startup** və **Docker** bölmələri
+- AI istifadəsi bəyannaməsi: [AI_USAGE.md](docs/AI_USAGE.md)
+- Texniki izah Word sənədi: [ATLAS_TEXNIKI_IZAH.docx](docs/ATLAS_TEXNIKI_IZAH.docx)
+
 ## Demo workflow
 
 1. Open the passenger page. The first visit shows a local **demo** login screen with mygov ID, SİMA, ASAN, identification and anonymous choices. These choices do not contact a government identity service or verify a person. The chosen label is stored in browser local storage and can be changed from the profile. The QR graphic is only a demo placeholder.

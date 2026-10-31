@@ -15,5 +15,7 @@
 - [x] README, architecture, technical explanation, AI declaration and Azerbaijani demo script
 - [x] Git ignore rules for secrets, database, environments and generated files
 - [ ] Verify Docker Compose on a machine with Docker
-- [ ] Review GitHub repository, create commit and publish only with team authorization
+- [x] Mənbə kodu GitHub ATLAS reposunda `main` budağına göndərilib
+- [x] README-də lokal və Docker işə salınması, qısa arxitektura və təhvil linkləri var
+- [x] AI istifadəsi bəyannaməsi və Word texniki izah sənədi hazırlanıb
 - [ ] Perform final Android browser walkthrough on the presentation network
